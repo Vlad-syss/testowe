@@ -1,13 +1,14 @@
-import { FilterType } from '../Filter'
+import { FilterChooseOption, FilterType } from '../Filter'
 
 export interface SearchRequestFilterBase {
 	id: string
 	type: FilterType
+	name: string // CHANGED
 }
 
 export interface SearchRequestOptions extends SearchRequestFilterBase {
 	type: FilterType.OPTION
-	optionsIds: string[]
+	options: FilterChooseOption[] // CHANGED
 }
 
 export type SearchRequestFilter = SearchRequestOptions[]
